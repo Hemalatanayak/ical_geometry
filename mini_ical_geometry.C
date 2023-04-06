@@ -20,14 +20,17 @@ void mini_ical_geometry(bool vis = true)
    TGeoMedium *Iron = new TGeoMedium("Iron",2, matIron);
    TGeoMedium *Glass = new TGeoMedium("Glass",3, matGlass);
 //   // All Units in cm
- 
+   Double_t Field = 1.5 ;// tesla
+   // TGeoUniformMagField *magField = new TGeoUniformMagField(0,Field,0);
+
+
    //--- make the top World volume //---All units are in cm
-   Double_t worldx = 250.;
-   Double_t worldy = 250.;
-   Double_t worldz =250.;
+   Double_t worldx = 125.;
+   Double_t worldy = 125.;
+   Double_t worldz = 60;
    TGeoVolume *top = geom->MakeBox("TOP", Air , worldx, worldy, worldz);
    geom->SetTopVolume(top);
-   // geom->SetVisibility(kFALSE);
+   geom->SetVisibility(top, kTRUE);
 
    // half-thickness of objects in the geometry
    Double_t rpcDim = 100; // cm
@@ -42,11 +45,13 @@ void mini_ical_geometry(bool vis = true)
    TGeoVolume *IRON = geom->MakeBox("IRON", Iron, rpcDim, rpcDim, ironThickness);
    IRON->SetLineColor(kBlue);
    IRON->SetTransparency(0.9);
+   // TGeoUniformMagField *magField = new	TGeoUniformMagField(0.,-2.0,0.);
+   // IRON->SetField(magField);
    // top->AddNode(IRON,1, new TGeoTranslation(0, 0, 2.8));
   
    for(int i=0;i<nlayers;i++){
    Double_t layerPosition=(((2*ironThickness)+inter_layer_gap+(2*glassThickness))*i);
-   top->AddNode(IRON,i+1, new TGeoTranslation(0, 0,layerPosition ));
+   top->AddNode(IRON,i+1, new TGeoTranslation(0, 0,-50+layerPosition ));
    }
 
 
@@ -57,8 +62,8 @@ void mini_ical_geometry(bool vis = true)
    GLASS->SetTransparency(0.9);
    // top->AddNode(GLASS,1, new TGeoTranslation(0, 0, -2.1));
    for(int i=0;i<(nlayers-1);i++){
-   Double_t glasslayerPosition=((5.6+inter_layer_gap+(2*glassThickness))*i)+(ironThickness+(inter_layer_gap/2));
-    top->AddNode(GLASS,i+1, new TGeoTranslation(0, 0,glasslayerPosition ));
+   Double_t glasslayerPosition=(((2*ironThickness)+inter_layer_gap+(2*glassThickness))*i)+(ironThickness+(inter_layer_gap/2));
+    top->AddNode(GLASS,i+1, new TGeoTranslation(0, 0,-50+glasslayerPosition ));
    }
 
 //    TGeoVolume *botGlass = geom->MakeBox("BOTGLASS", Vacuum, rpcDim, rpcDim, glassThickness);

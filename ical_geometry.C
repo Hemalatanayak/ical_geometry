@@ -13,6 +13,8 @@
 #include "TGeoCompositeShape.h" 
 #include "TGeoBoolNode.h" 
 #include "TGeoPhysicalNode.h" 
+#include "TGeoMatrix.h"
+// #include "TGeoMagneticField.h"
 
 
 void ical_geometry(bool vis = true)
@@ -32,9 +34,9 @@ void ical_geometry(bool vis = true)
 //   // All Units in cm
  
    //--- make the top World volume //---All units are in cm
-   Double_t worldx = 1650.;
-   Double_t worldy = 1650.;
-   Double_t worldz =1650.;
+   Double_t worldx = 810.;
+   Double_t worldy = 810.;
+   Double_t worldz = 730.;
    TGeoVolume *top = geom->MakeBox("TOP", Air , worldx, worldy, worldz);
    geom->SetTopVolume(top);
    // geom->SetVisibility(kFALSE);
@@ -53,10 +55,10 @@ void ical_geometry(bool vis = true)
    IRON->SetLineColor(kBlue);
    IRON->SetTransparency(0.9);
    // top->AddNode(IRON,1, new TGeoTranslation(0, 0, 2.8));
-  
+ 
    for(int i=0;i<nlayers;i++){
-   Double_t layerPosition=(((ironThickness*2)+inter_layer_gap+(glassThickness*2)))*i;
-   top->AddNode(IRON,i+1, new TGeoTranslation(0, 0,layerPosition ));
+   Double_t layerPosition=(((ironThickness*2)+inter_layer_gap+(glassThickness*2))*i);
+   top->AddNode(IRON,i+1, new TGeoTranslation(0, 0,-715+layerPosition ));
    }
 
 
@@ -67,9 +69,10 @@ void ical_geometry(bool vis = true)
    GLASS->SetLineColor(kRed);
    GLASS->SetTransparency(0.9);
    // top->AddNode(GLASS,1, new TGeoTranslation(0, 0, -2.1));
+   
    for(int i=0;i<(nlayers-1);i++){
    Double_t glasslayerPosition=(((ironThickness*2)+inter_layer_gap+(glassThickness*2))*i)+(ironThickness+(inter_layer_gap/2));
-    top->AddNode(GLASS,i+1, new TGeoTranslation(0, 0,glasslayerPosition ));
+    top->AddNode(GLASS,i+1, new TGeoTranslation(0, 0,-715+glasslayerPosition ));
    }
 
 

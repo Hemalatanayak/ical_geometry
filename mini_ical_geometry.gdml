@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
   <define>
-    <position name="IRON_1inTOPpos" x="0" y="0" z="0" unit="cm"/>
-    <position name="IRON_2inTOPpos" x="0" y="0" z="10.100099999999999" unit="cm"/>
-    <position name="IRON_3inTOPpos" x="0" y="0" z="20.200199999999999" unit="cm"/>
-    <position name="IRON_4inTOPpos" x="0" y="0" z="30.3003" unit="cm"/>
-    <position name="IRON_5inTOPpos" x="0" y="0" z="40.400399999999998" unit="cm"/>
-    <position name="IRON_6inTOPpos" x="0" y="0" z="50.500499999999995" unit="cm"/>
-    <position name="IRON_7inTOPpos" x="0" y="0" z="60.6006" unit="cm"/>
-    <position name="IRON_8inTOPpos" x="0" y="0" z="70.700699999999998" unit="cm"/>
-    <position name="IRON_9inTOPpos" x="0" y="0" z="80.800799999999995" unit="cm"/>
-    <position name="IRON_10inTOPpos" x="0" y="0" z="90.900899999999993" unit="cm"/>
-    <position name="IRON_11inTOPpos" x="0" y="0" z="101.00099999999999" unit="cm"/>
-    <position name="GLASS_1inTOPpos" x="0" y="0" z="5.0499999999999998" unit="cm"/>
-    <position name="GLASS_2inTOPpos" x="0" y="0" z="15.150099999999998" unit="cm"/>
-    <position name="GLASS_3inTOPpos" x="0" y="0" z="25.2502" unit="cm"/>
-    <position name="GLASS_4inTOPpos" x="0" y="0" z="35.350299999999997" unit="cm"/>
-    <position name="GLASS_5inTOPpos" x="0" y="0" z="45.450399999999995" unit="cm"/>
-    <position name="GLASS_6inTOPpos" x="0" y="0" z="55.550499999999992" unit="cm"/>
-    <position name="GLASS_7inTOPpos" x="0" y="0" z="65.650599999999997" unit="cm"/>
-    <position name="GLASS_8inTOPpos" x="0" y="0" z="75.750699999999995" unit="cm"/>
-    <position name="GLASS_9inTOPpos" x="0" y="0" z="85.850799999999992" unit="cm"/>
-    <position name="GLASS_10inTOPpos" x="0" y="0" z="95.95089999999999" unit="cm"/>
+    <position name="IRON_1inTOPpos" x="0" y="0" z="-50" unit="cm"/>
+    <position name="IRON_2inTOPpos" x="0" y="0" z="-39.899900000000002" unit="cm"/>
+    <position name="IRON_3inTOPpos" x="0" y="0" z="-29.799800000000001" unit="cm"/>
+    <position name="IRON_4inTOPpos" x="0" y="0" z="-19.6997" unit="cm"/>
+    <position name="IRON_5inTOPpos" x="0" y="0" z="-9.5996000000000024" unit="cm"/>
+    <position name="IRON_6inTOPpos" x="0" y="0" z="0.50049999999999528" unit="cm"/>
+    <position name="IRON_7inTOPpos" x="0" y="0" z="10.6006" unit="cm"/>
+    <position name="IRON_8inTOPpos" x="0" y="0" z="20.700699999999998" unit="cm"/>
+    <position name="IRON_9inTOPpos" x="0" y="0" z="30.800799999999995" unit="cm"/>
+    <position name="IRON_10inTOPpos" x="0" y="0" z="40.900899999999993" unit="cm"/>
+    <position name="IRON_11inTOPpos" x="0" y="0" z="51.000999999999991" unit="cm"/>
+    <position name="GLASS_1inTOPpos" x="0" y="0" z="-44.950000000000003" unit="cm"/>
+    <position name="GLASS_2inTOPpos" x="0" y="0" z="-34.849900000000005" unit="cm"/>
+    <position name="GLASS_3inTOPpos" x="0" y="0" z="-24.7498" unit="cm"/>
+    <position name="GLASS_4inTOPpos" x="0" y="0" z="-14.649700000000003" unit="cm"/>
+    <position name="GLASS_5inTOPpos" x="0" y="0" z="-4.5496000000000052" unit="cm"/>
+    <position name="GLASS_6inTOPpos" x="0" y="0" z="5.5504999999999924" unit="cm"/>
+    <position name="GLASS_7inTOPpos" x="0" y="0" z="15.650599999999997" unit="cm"/>
+    <position name="GLASS_8inTOPpos" x="0" y="0" z="25.750699999999995" unit="cm"/>
+    <position name="GLASS_9inTOPpos" x="0" y="0" z="35.850799999999992" unit="cm"/>
+    <position name="GLASS_10inTOPpos" x="0" y="0" z="45.95089999999999" unit="cm"/>
   </define>
   <materials>
     <material name="Air" Z="1">
@@ -38,7 +38,7 @@
     </material>
   </materials>
   <solids>
-    <box name="TOP" x="500" y="500" z="500" lunit="cm"/>
+    <box name="TOP" x="250" y="250" z="120" lunit="cm"/>
     <box name="IRON0x1" x="200" y="200" z="5.5999999999999996" lunit="cm"/>
     <box name="GLASS0x1" x="200" y="200" z="0.0001" lunit="cm"/>
   </solids>
